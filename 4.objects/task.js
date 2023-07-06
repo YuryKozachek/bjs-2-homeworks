@@ -3,21 +3,21 @@ function Student(name, gender, age) {
   this.gender = gender;
   this.age = age;
   this.marks = [];
+};
 
-
-this.setSubject = function (subjectName) {
+Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
 };
 
-this.addMarks = function (...marksToAdd) {
-  if(!this.marks){
-    console.log("Студент отчислен");
-    return;
+Student.prototype.addMarks = function (...marks) {
+  if (!this.marks){
+     console.log("Студент отчислен");
+     return;
    }
-  this.marks.push(...marksToAdd);
+  this.marks.push(...marks);
 };
 
-this.getAverage = function () {
+Student.prototype.getAverage = function () {
   if(!this.marks || !this.marks.length){
     return 0;
   }
@@ -25,9 +25,9 @@ this.getAverage = function () {
   return sum / this.marks.length;
 };
 
-this.exclude = function (reason) {
+Student.prototype.exclude = function (reason) {
   delete this.subject;
   delete this.marks;
   this.exclude = reason;
 };
-};
+
