@@ -3,7 +3,7 @@ function Student(name, gender, age) {
   this.gender = gender;
   this.age = age;
   this.marks = [];
-};
+
 
 this.setSubject = function (subjectName) {
   this.subject = subjectName;
@@ -29,4 +29,5 @@ this.exclude = function (reason) {
   delete this.subject;
   delete this.marks;
   this.exclude = reason;
+};
 };
