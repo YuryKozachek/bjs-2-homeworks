@@ -74,8 +74,9 @@ class Library {
       const book = this.books[i];
       if (book[type] === value) {
         return book;
-      } 
+      }
     }
+    return null;
   }
   giveBookByName(bookName) {
     for (let i = 0; i < this.books.length; i++) {
@@ -84,5 +85,6 @@ class Library {
          this.books.pop(bookName);
       } 
     }
+    return null;
   }
 }
