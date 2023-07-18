@@ -83,6 +83,7 @@ class Library {
       const book = this.books[i];
       if (book.name === bookName) {
          this.books.pop(bookName);
+         return book.name;
       } 
     }
     return null;
