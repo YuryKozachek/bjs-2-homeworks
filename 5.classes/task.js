@@ -79,12 +79,9 @@ class Library {
     return null;
   }
   giveBookByName(bookName) {
-    for (let i = 0; i < this.books.length; i++) {
-      const book = this.books[i];
-      if (book.name === bookName) {
-         this.books.pop(bookName);
-         return book.name;
-      } 
+    const index = this.books.findIndex(book => book.name === bookName);
+    if (index !== -1) {
+      return this.books.splice(index, 1)[0];
     }
     return null;
   }
